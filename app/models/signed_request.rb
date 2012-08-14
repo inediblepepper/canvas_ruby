@@ -26,11 +26,10 @@ class SignedRequest
 
     # 2) Verify the contents of the payload by first validating the authenticity
     #    of the signature.
-#    key = @consumerSecret.bytes
-#    decodedSignature = Base64.decode64(signature)
-#    digest = OpenSSL::Digest::Digest.new("sha256")
-#    hmac = OpenSSL::HMAC.digest(digest, key, payload.bytes)
-#    raise "Signed request has been tampered with." if decodedSignature != hmac
+    decodedSignature = Base64.decode64(signature)
+    digest = OpenSSL::Digest::Digest.new("sha256")
+    hmac = OpenSSL::HMAC.digest(digest, @consumerSecret, payload)
+    raise "Signed request has been tampered with." if decodedSignature != hmac
 
     # 3) Decode the base64 encoded payload of the canvas request.
     jsonString = Base64.decode64(payload)

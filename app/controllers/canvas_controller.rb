@@ -10,8 +10,10 @@ class CanvasController < ApplicationController
     # Validate the signed request was provided.
     raise "Signed request parameter required." if @sr.blank?()
 
-    # TODO - Replace with environment key here.
-    secret = "837961580268743231"
+    # Retrieve consumer secret from environment
+    secret = ENV["CANVAS_CONSUMER_SECRET"]
+    raise "No consumer secret found in environment." if secret.blank?()
+
 
     # Construct the signed request helper
     srHelper = SignedRequest.new(secret,@sr)
