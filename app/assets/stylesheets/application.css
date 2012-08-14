@@ -48,7 +48,7 @@
     background-color: white;
     border: 3px solid #aaa;
     padding: 25px;
-    width: 500px;
+    width: 750px;
   }
 
   #footer {
@@ -137,3 +137,44 @@
   .filename {
     font-style: italic;
   }
+
+  #footercont
+{
+    float: left;
+    width: 750px;
+    height: 50px;
+    color: #999;
+}
+
+#footercont p
+{
+    margin: 0;
+    padding: 15px;
+}
+
+#footercont a
+{
+    color: #999;
+    text-decoration: none;
+}
+
+#footercont a:hover
+{
+    color: #199BD2;
+    text-decoration: none;
+}
+
+#footerleft
+{
+    float: left;
+    width: 400px;
+    height: 50px;
+}
+
+#footerright
+{
+    float: left;
+    width: 350px;
+    height: 50px;
+    text-align: right;
+}

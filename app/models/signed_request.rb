@@ -34,7 +34,7 @@ class SignedRequest
 
     # 3) Decode the base64 encoded payload of the canvas request.
     jsonString = Base64.decode64(payload)
-    return JSON.parse(jsonString)
+    return jsonString
 
   end
 end
