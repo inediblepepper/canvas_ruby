@@ -1,6 +1,5 @@
 require "openssl"
 require "base64"
-require "json"
 
 class SignedRequest
 
@@ -11,7 +10,7 @@ class SignedRequest
   end
 
   # Validates the signed request by verifying the key, then returns
-  # the CanvasRequest object after parsing the json.
+  # the json string.
   def unsign()
 
     # Validate secret and signed request string.
