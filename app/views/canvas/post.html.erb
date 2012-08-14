@@ -1,0 +1,32 @@
+<div id="page">
+  <div id="content">
+    <div id="header">
+      <h1>Hello <%= @canvasRequest["context"]["user"]["fullName"] %>!</h1>
+      <h2>Welcome to the Canvas Ruby on Rails example!</h2>
+    </div>
+
+    <div id="canvas-content">
+      <h1>Canvas Request</h1>
+      <h2>Below is some information received in the Canvas Request:</h2>
+      <div id="canvas-request">
+        <table border="0" width="100%">
+            <tr>
+                <td><b>First Name: </b><%= @canvasRequest["context"]["user"]["firstName"] %></td>
+                <td><b>Last Name: </b><%= @canvasRequest["context"]["user"]["lastName"] %></td>
+                <td><img border="0" src="<%= @canvasRequest["instanceUrl"]+@canvasRequest["context"]["user"]["profileThumbnailUrl"] %>" /></td>
+            </tr>
+            <tr>
+                <td><b>Username: </b><%= @canvasRequest["context"]["user"]["userName"] %></td>
+                <td colspan="2"><b>Email Address: </b><%= @canvasRequest["context"]["user"]["email"] %></td>
+            </tr>
+            <tr>
+                <td colspan="3"><b>Company: </b><%= @canvasRequest["context"]["organization"]["name"] %></td>
+            </tr>
+         </table>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer">&nbsp;</div>
+</div>
